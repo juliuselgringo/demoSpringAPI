@@ -42,7 +42,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-          # test d'attente de mise en service du container Mysql
+          # test attente de mise en service du container Mysql
       - name: wait_for_MySQL_to_be_ready
         run: |
           while ! mysqladmin ping -h"127.0.0.1" -P"3306" --silent; do
