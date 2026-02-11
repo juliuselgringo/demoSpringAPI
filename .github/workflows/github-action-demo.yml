@@ -81,9 +81,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: package.jar
+          path: target
 
       - name: List files in the repository
-        run: ls ${{ github.workspace }}
+        run: ls -R ${{ github.workspace }}
 
       - name: Build and push
         uses: docker/build-push-action@v5
